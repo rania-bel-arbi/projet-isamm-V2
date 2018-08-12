@@ -1,0 +1,7 @@
+
+{% extends('base.html.twig')  %}
+{% block body %}
+<h1>{{ title }}</h1>
+<h2>mariem {{ comm|length }}</h2>
+    <ul>{% for aa in comm %} <li>{{ aa }}</li> {%endfor%} </ul>
+{% endblock %}
