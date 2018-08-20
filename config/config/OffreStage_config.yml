@@ -1,0 +1,10 @@
+easy_admin:
+    disabled_actions: ['show']
+    entities:
+        Categorie:
+            class: App\Entity\OffreStage
+            label: 'Liste des offres'
+            list:
+                fields:
+                    - "id"
+                    - "$description"

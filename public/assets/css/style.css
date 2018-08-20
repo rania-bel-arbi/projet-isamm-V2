@@ -403,6 +403,7 @@ ul.sidebar-menu li a.active i {
 .header, .footer {
     min-height: 60px;
     padding: 0 15px;
+
 }
 
 .header {
@@ -2219,6 +2220,10 @@ label {
     background: #68dff0;
     color: #fff;
     padding: 10px 0;
+
+
+
+
 }
 
 

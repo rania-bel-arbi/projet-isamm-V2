@@ -1,0 +1,40 @@
+{% extends('interfaces/layout.html.twig')  %}
+
+{% block title %}se connecter-Isamm Network{% endblock %}
+
+{% block body %}
+    <h1 align="center"> Bienvenue dans Isamm Network</h1>
+    <div id="login-page">
+        <div class="container">
+
+            <form class="form-login" action="/index">
+                <h2 class="form-login-heading">Inscription</h2>
+                <div class="login-wrap">
+                    <label>Email</label>
+                    <input type="text" class="form-control" placeholder="Entrer votre email" autofocus>
+                    <br>
+                    <label>Mot de passe</label>
+                    <input type="password" class="form-control" placeholder="Entrer votre mot de passe">
+                    <br><br>
+                    <button class="btn btn-theme btn-block" href="/index" type="submit"><i class="fa fa-lock"></i> s'inscrire</button>
+                    <hr>
+
+                    <!--div class="login-social-link centered">
+                    <p>or you can sign in via your social network</p>
+                        <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
+                        <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
+                    </div-->
+                    <div class="registration">
+                        Vous avez un compt?<br/>
+                        <a class="" href="/">
+                            connecter
+                        </a>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

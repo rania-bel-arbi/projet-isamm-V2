@@ -1,0 +1,132 @@
+{% extends('base.html.twig')  %}
+{% block body %}
+
+            <h3><i class="fa fa-angle-right"> Liste des demandes de stage</i>
+                <a class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#myModal">demander un stage</a></h3>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Demander un stage</h4>
+                </div>
+                <div class="modal-body">
+
+
+                        <!-- INPUT MESSAGES -->
+                        <div class="row mt">
+                            <div class="col-lg-12">
+                                    <form class="form-horizontal tasi-form" method="get" action="">
+                                        <div class="form-group has-success">
+                                            <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Message</label>
+                                            <div class="col-lg-10">
+
+                                                <textarea class="form-control" rows="5" id="inputWarning"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-warning">
+                                            <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">date début</label>
+                                            <div class="col-lg-10">
+                                                <input type="date" class="form-control" id="inputSuccess">
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-warning">
+                                            <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">date fin</label>
+                                            <div class="col-lg-10">
+                                                <input type="date" class="form-control" id="inputSuccess">
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-error">
+                                            <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">cv</label>
+                                            <div class="col-lg-10">
+                                                <input type="file" class="form-control" id="inputError">
+                                            </div>
+
+
+                                </div><!-- /form-panel -->
+                            </div><!-- /col-lg-12 -->
+                        </div><!-- /row -->
+
+                        <!-- INPUT MESSAGES -->
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" >valider</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">annuler</button>
+                </div></form>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    </body>
+    </html>
+
+
+    <!-- SORTABLE TO DO LIST -->
+            <div class="row mt mb">
+                <div class="col-md-12">
+                    <section class="task-panel tasks-widget">
+                        <div class="panel-heading">
+                            <div class="pull-left"><h5><i class="fa fa-user"></i> Mes demandes </h5></div>
+                            <br>
+                        </div>
+                        <div class="panel-body">
+                            <div class="task-content">
+                                <ul id="sortable" class="task-list">
+                                    <li class="list-primary">
+                                        <div class="task-title">
+                                            <span class="badge bg-warning">Message:</span><br><br>
+                                            <span class="badge bg-primary"> date de début :</span> <br><br>
+                                            <span class="badge bg-important"> date de fin :</span> <br><br>
+                                                <button type="button" class="badge bg-info">Télécharger cv</button>
+                                                <br><br>
+
+
+                                            <div class="pull-right hidden-phone">
+                                                <button class="btn btn-success btn-xs fa fa-check"></button>
+                                                <button class="btn btn-primary btn-xs fa fa-pencil"></button>
+                                                <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+                            <div class="panel-body">
+                                <div class="task-content">
+                                    <ul id="sortable" class="task-list">
+                                        <li class="list-primary">
+                                            <div class="task-title">
+                                                <span class="badge bg-warning">Message:</span><br><br>
+                                                <span class="badge bg-primary"> date de début :</span> <br><br>
+                                                <span class="badge bg-important"> date de fin :</span> <br><br>
+                                                <button type="button" class="badge bg-info">Télécharger cv</button>
+                                                <br><br>
+
+
+                                                <div class="pull-right hidden-phone">
+                                                    <button class="btn btn-success btn-xs fa fa-check"></button>
+                                                    <button class="btn btn-primary btn-xs fa fa-pencil"></button>
+                                                    <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                        </div>
+                    </section>
+                </div><!--/col-md-12 -->
+            </div><!-- /row -->
+
+{% endblock %}

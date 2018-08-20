@@ -1,0 +1,5 @@
+easy_admin:
+    entities:
+        - App\Entity\Message
+        - App\Entity\OffreStage
+        - App\Entity\User

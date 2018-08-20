@@ -1,0 +1,10 @@
+easy_admin:
+    disabled_actions: ['show']
+    entities:
+        AvisSite:
+            class: App\Entity\Message
+            label: 'forum'
+            list:
+                fields:
+                    - "description"
+

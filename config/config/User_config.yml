@@ -1,0 +1,18 @@
+easy_admin:
+    disabled_actions: ['show']
+    entities:
+        User:
+            class: AppBundle\Entity\User
+            label: 'Liste des utilisateurs'
+            list:
+
+                fields:
+                    - "id"
+                    - "nom"
+                    - "prenom"
+                    - { property: 'Roles', type: 'array' }
+                    - "email"
+                    - "tel"
+
+
+

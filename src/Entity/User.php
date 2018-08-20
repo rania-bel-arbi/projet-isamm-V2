@@ -1,117 +1,108 @@
 <?php
-// src/AppBundle/Entity/User.php
 
 namespace App\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="fos_user")
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User extends BaseUser
+class User implements UserInterface, \serializable
 {
     /**
-     * @ORM\Id
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
-
-
-
+    private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="nom", type="string", length=50,nullable=true)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
-    private $nom;
-
-
-
-
-
+    private $username;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="prenom", type="string", length=50,nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $prenom;
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="latitude", type="string", length=50,  nullable=true)
-     */
-    private $latitude;
+    private $password;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="longitude", type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
-    private $longitude;
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
+    private $email;
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getUsername(): ?string
     {
-        return $this->nom;
+        return $this->username;
     }
 
-    public function setNom(?string $nom): self
+    public function setUsername(string $username): self
     {
-        $this->nom = $nom;
+        $this->username = $username;
 
         return $this;
     }
 
-    public function getPrenom(): ?string
+    public function getPassword(): ?string
     {
-        return $this->prenom;
+        return $this->password;
     }
 
-    public function setPrenom(?string $prenom): self
+    public function setPassword(string $password): self
     {
-        $this->prenom = $prenom;
+        $this->password = $password;
 
         return $this;
     }
 
-    public function getLatitude(): ?string
+    public function getEmail(): ?string
     {
-        return $this->latitude;
+        return $this->email;
     }
 
-    public function setLatitude(?string $latitude): self
+    public function setEmail(string $email): self
     {
-        $this->latitude = $latitude;
+        $this->email = $email;
 
         return $this;
     }
 
-    public function getLongitude(): ?string
+    public function getRoles()
     {
-        return $this->longitude;
+        return [
+            'ROLE_USER'
+        ];
     }
 
-    public function setLongitude(?string $longitude): self
-    {
-        $this->longitude = $longitude;
+    public function getSalt(){}
+    public function eraseCredentials(){}
 
-        return $this;
+
+    public function serialize()
+    {
+        return serialize([
+                $this->id,
+                $this->username,
+                $this->email,
+                $this->password
+        ]);
+
     }
 
+    public function unserialize($string)
+    {
+        list(
+            $this->id,
+            $this->username,
+            $this->email,
+            $this->password
+            )= unserialize($string, ['allowed-classes'=>false]);
 
-
+    }
 }
